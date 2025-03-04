@@ -1,4 +1,6 @@
 import 'package:ecomm/pages/intro_page.dart';
+import 'package:ecomm/pages/shop_page.dart';
+import 'package:ecomm/themes/light_mode.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +14,14 @@ class EcommApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      home: const IntroPage(),
+      theme: lightMode,
+      routes: {
+        '/intro_page': (context) => const IntroPage(),
+        '/shop_page': (context) => const ShopPage(),
+      },
     );
   }
 }
