@@ -1,12 +1,17 @@
+import 'package:ecomm/models/shop.dart';
 import 'package:ecomm/pages/cart_page.dart';
 import 'package:ecomm/pages/intro_page.dart';
 import 'package:ecomm/pages/shop_page.dart';
 import 'package:ecomm/themes/light_mode.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    const EcommApp(),
+    ChangeNotifierProvider(
+      create: (context) => Shop(),
+      child: const EcommApp(),
+    ),
   );
 }
 
